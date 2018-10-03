@@ -9,6 +9,6 @@ RUN	apt-get update -q && \
 	echo "deb http://miktex.org/download/ubuntu bionic universe" | tee /etc/apt/sources.list.d/miktex.list && \
 	apt-get update -q
 	
-RUN	apt-get install -qy miktex lyx git
+RUN	apt-get install -qy miktex texlive-xetex lyx git
 
 RUN	rm -rf /var/lib/apt/lists/*
