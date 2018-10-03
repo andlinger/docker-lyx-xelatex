@@ -3,6 +3,7 @@ FROM ubuntu:bionic
 USER root
 
 RUN	apt-get update -q && \
+	DEBIAN_FRONTEND=noninteractive apt-get install -yq tzdata && \
 	apt-get install -qy gnupg ca-certificates && \
 	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D6BC243565B2087BC3F897C9277A7293F59E4889 && \
 	echo "deb http://miktex.org/download/ubuntu bionic universe" | tee /etc/apt/sources.list.d/miktex.list && \
